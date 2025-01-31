@@ -144,6 +144,35 @@ public class Main {
             long (8 바이트, 64 비트)
                 최소값: -9,223,372,036,854,775,808 (−2^63)
                 최대값: 9,223,372,036,854,775,807 (2^63 − 1)
+
+
+        5. 상수 -> 변수와 반대되는 개념
+            특징 :
+                1) 한 번의 선언 및 초기화가 가능 -> 변수와는 달리 '재 대입이 불가능'
+                2) 이미 초기화가 끝난 상수를 한참 밑에서 불러올 경우 걔가 상수인지 변수인지
+                    가시적으로 확인이 불가능하기 때문에 개발자들끼리의 약속으로 상수는
+                    전부 다 대문자로 작성하고, 단어와 단어 사이의 공백을 "_"로 연결함.
+                3) 상수를 선언할 때는 "final" 키워드가 붙음
          */
+        // 자료형 변수명 = 데이터;
+        // final 자료형 변숨여 = 데이터;
+
+        final int FINAL_NUM = 123;
+
+//        FINAL_NUM = 321;  // 오류 발생
+
+        System.out.println(FINAL_NUM);
+
+        final String FILE_PATH = "C:\\AhnGeunsu\\java_project";
+        System.out.println(FILE_PATH);
+        // 상수의 경우 파일 경로와 같이 쉽게 바뀌어서는 안되는 부분에 부분적으로 사용.
+
+        /*
+            1) java 우클릭 -> new -> package 클릭
+                chapter02_conversion 패키지를 생성
+            2) chapter02_conversion 우클릭 -> new -> java class 클릭
+                Main.java 클래스를 생성
+         */
+
     }
 }
