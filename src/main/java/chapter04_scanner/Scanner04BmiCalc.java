@@ -1,4 +1,7 @@
 package chapter04_scanner;
+
+import java.util.Scanner;
+
 /*
     Bmi 계산기를 작성합니다.
 
@@ -14,6 +17,28 @@ package chapter04_scanner;
  */
 public class Scanner04BmiCalc {
     public static void main(String[] args) {
+        // Scanner 클래스를 import
+        Scanner scanner = new Scanner(System.in);
 
+        // 사용할 변수 height, weight
+        double height = 0;
+        double weight = 0;
+        int bmi = 0;
+
+        System.out.print("당신의 키(cm)를 입력하세요 >>> ");
+        height = scanner.nextDouble();
+        // cm -> m로 변환할 필요가 있습니다. 172.3 -> 1.723으로 바뀌어야 한다는 점
+        height = height / 100;
+
+        System.out.print("당신의 몸무게(kg)를 입력하세요 >>> ");
+        weight = scanner.nextDouble();
+
+        // bmi 지수 산출을 위한 연산 -> 그런데 int로 떨어져야 합니다. -> 형변환
+        bmi = (int)(weight / (height*height));
+
+        System.out.println("당신의 bmi지수는 " + bmi + "입니다.");
+
+        // 다하신분들은 chapter05_condition 패키지 생성
+        // Condition01 클래스 생성
     }
 }
