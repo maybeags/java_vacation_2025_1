@@ -22,8 +22,23 @@ public class Loop01For {
 //            System.out.println(i);
 //        }
 
-        for (int i = 0 ; i < 10 ; i++) {
-            System.out.println(i+1);
+//        for (int i = 0 ; i < 10 ; i++) {
+//            System.out.println(i+1);
+//        }
+
+        int sum = 0;
+
+        /*
+            1부터 100까지의 합을 구하시오.
+         */
+
+        // 반복문 작성
+        for( int i = 0 ; i < 101 ; i++ ) {
+            sum += i;
         }
+
+        System.out.println("1부터 100까지의 합 : " + sum);
+
+
     }
 }
