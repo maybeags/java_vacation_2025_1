@@ -30,7 +30,7 @@ public class Loop04 {
 //        }
 
         /*
-            숫자를 입력 받아 그 줄 수 만큼의 별찍기가 이루어질 수 있도록 작성하ㅣㅅ오.
+            숫자를 입력 받아 그 줄 수 만큼의 별찍기가 이루어질 수 있도록 작성하시오.
 
             실행 예
             숫자를 입력하세요 >>> 3
@@ -70,6 +70,25 @@ public class Loop04 {
                 **
                ***
          */
+
+        for (int i = 0 ; i < 3 ; i++ ) {
+            // 공백을 위한 반복문
+            // # 1 : j--를 사용한 방식
+//            for (int j = 3 ; j > i+1 ; j--) {
+//                System.out.print(" ");
+//            }
+
+            // # 2 : j++를 사용한 방식
+            for (int j = 0 ; j < 3-(i+1) ; j++) {
+                System.out.print("  ");
+            }
+
+            // 별을 찍는 반복문
+            for( int k = 0 ; k < i+1 ; k++) {
+                System.out.print("⚽");
+            }
+            System.out.println(); // 개행을 위한 실행문3
+        }
 
 
 
