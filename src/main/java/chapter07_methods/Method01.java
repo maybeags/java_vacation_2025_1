@@ -84,26 +84,62 @@ public class Method01 {
         return year + "년 " + month + "월 " + date + "일 " + day + "요일입니다.";
     }
 
+    /*
+        함수형 프로그래밍(functional programming) :
+            메서드1의 return값이 메서드2의 argument가 되고, 메서드2의 return값이
+            메서드3의 argument가 되는 방식으로,
+
+            첫번째 메서드부터 마지막 메서드까지의 흐름을 통해
+            프로그램이 이어지는 방식을 의미함.
+     */
+    // * 함수형 프로그래밍의 간단한 예시
+    public static String introduce(String name, int age) {
+        return "제 이름은 " + name + "이고, 나이는 " + age + "살입니다.\n내년에 " + (age+1) + "살 입니다.";
+    }
+
 
     public static void main(String[] args) {
-        call1();
-        call2("웹 수업 잘하기...😥");      // 호출 단계에서 ()내에 있는 것이 argument
-        call3();    // 이렇게 작성했을 때, 우리가 위에서 작성한 for 반복문의 결과값이 나오지 않습니다.
-
-//        System.out.println(call3());
-
-        String starWritten = call3();       // 메서드의 결과값을 변수에 대입하여,
-        System.out.println(starWritten);    // 출력하는 방식
-
-        call4(2025, 2, 5, "수");
-        System.out.println(call4(2025, 2, 5, "수"));
-
-        String finalDate = call4(2025, 2, 5, "수");
-        System.out.println(finalDate);
-
         Scanner scanner = new Scanner(System.in);
-        System.out.print("숫자를 입력하세요 >>> ");
-        int n = scanner.nextInt();
-        System.out.println(n);
+
+        String myName = "";
+        int myAge = 0;
+
+        System.out.print("이름을 입력하세요 >>> ");
+        myName = scanner.nextLine();
+        System.out.print("나이를 입력하세요 >>> ");
+        myAge = scanner.nextInt();
+        // 이상의 코드는 scanner의 메서드 nextLine() nextInt()를 사용해서 그 결과 값을 각각
+        // myName, myAge라는 변수에 저장한 부분입니다.
+
+        System.out.println(introduce(myName, myAge));
+        // 이상의 코드는 107-110라인까지의 결과값들을 새로운 메서드인 introduce()의 name, age 매개변수에
+        // 각각 myName 및 myAge를 argument로 집어넣어서, introduce() 메서드 내에서
+        // 데이터들을 재가공하는 결과를 거칩니다.
+
+
+
+//        call1();
+//
+//
+//        call2("웹 수업 잘하기...😥");      // 호출 단계에서 ()내에 있는 것이 argument
+//        call3();    // 이렇게 작성했을 때, 우리가 위에서 작성한 for 반복문의 결과값이 나오지 않습니다.
+//
+////        System.out.println(call3());
+//
+//        String starWritten = call3();       // 메서드의 결과값을 변수에 대입하여,
+//        System.out.println(starWritten);    // 출력하는 방식
+//
+//        call4(2025, 2, 5, "수");
+//        System.out.println(call4(2025, 2, 5, "수"));
+//
+//        String finalDate = call4(2025, 2, 5, "수");
+//        System.out.println(finalDate);
+//
+//
+//        System.out.print("숫자를 입력하세요 >>> ");
+//        int n = scanner.nextInt();
+//        System.out.println(n);
+
+
     }
 }
