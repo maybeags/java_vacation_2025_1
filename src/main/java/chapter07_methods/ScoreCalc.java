@@ -11,30 +11,30 @@ import java.util.Scanner;
  */
 public class ScoreCalc {
     // 1. 총합을 내는 메서드 : call4() 유형으로 작성하겠습니다. 매개변수 / return 존재
-    public static double addScores(double score1, double score2) {
-        return score1 + score2;
+    public static double addScores(double totalScore, double addedScore) {
+        return totalScore + addedScore;
     }
 
     // 2. addScores() 메서드를 오버로딩하여 매개 변수가 3, 4, 5, 6인 메서드들을 만드세요.
-    public static double addScores(double score1, double score2, double score3) {
-        return score1 + score2 + score3;
-    }
-
-    public static double addScores(double score1, double score2,
-                                   double score3, double score4) {
-        return score1 + score2 + score3 + score4;
-    }
-
-    public static double addScores(double score1, double score2, double score3,
-                                   double score4, double score5) {
-        return score1 + score2 + score3 + score4 + score5;
-    }
-
-    public static double addScores(double score1, double score2,
-                                   double score3, double score4,
-                                   double score5, double score6) {
-        return score1 + score2 + score3 + score4 + score5 + score6;
-    }
+//    public static double addScores(double score1, double score2, double score3) {
+//        return score1 + score2 + score3;
+//    }
+//
+//    public static double addScores(double score1, double score2,
+//                                   double score3, double score4) {
+//        return score1 + score2 + score3 + score4;
+//    }
+//
+//    public static double addScores(double score1, double score2, double score3,
+//                                   double score4, double score5) {
+//        return score1 + score2 + score3 + score4 + score5;
+//    }
+//
+//    public static double addScores(double score1, double score2,
+//                                   double score3, double score4,
+//                                   double score5, double score6) {
+//        return score1 + score2 + score3 + score4 + score5 + score6;
+//    }
 
     // 평균을 내는 메서드를 정의 : call4() 유형으로 작성
     public static double calculateAvg(double totalScore, int numOfSubjects) {
@@ -67,13 +67,38 @@ public class ScoreCalc {
 
 
         // 여태까지 매번 변수 선언하고 초기화해서 대입하면서 sout했던 사례
-        double totalScore2 = addScores(100, 90);
-        int subs = 2;
-        double avgScore = calculateAvg(totalScore2, subs);
-        System.out.println(avgScore);
+//        double totalScore2 = addScores(100, 90);
+//        int subs = 2;
+//        double avgScore = calculateAvg(totalScore2, subs);
+//        System.out.println(avgScore);
+//
+//        // 가독성은 좀 깨지기는 하지만 여전히 개발자들이 사용하는 방식
+//        System.out.println(calculateAvg(addScores(100, 80), 2));
 
-        // 가독성은 좀 깨지기는 하지만 여전히 개발자들이 사용하는 방식
-        System.out.println(calculateAvg(addScores(100, 80), 2));
 
+        // 이상의 코드는 오버로딩이 항상 만능은 아니라는 점이고,
+        // 기존에 있는 메서드를 main 단계에서 어떻게 잘 활용하면 무분별하게 오버로딩을
+        // 하지 않아도 되는지를 보여드리기 위함입니다.
+
+        // 점수를 입력 받을 Scanner 클래스를 import
+        Scanner scanner = new Scanner(System.in);
+
+        // 사용할 변수 목록
+        boolean endOfCalc = false;
+        double score1 = 0;
+        double totalScore = 0;
+        double avgScore = 0;
+        int totalSubs = 1;      // 과목 수
+
+        // 점수 입력을 반복하기 위한 while문 작성
+        while(!endOfCalc) {
+            System.out.print("점수를 입력하세요(종료하려면 -1을 입력하세요) >>> ");
+            score1 = scanner.nextDouble();
+            // score1 = -1이 대입되었다면 반복문이 종료되어야 하므로 조건문 작성
+            if(score1 == -1) {  // 굳이 '종료'라든지 'x'라든지 이런게 아니라
+                break;          // -1을 입력했을 때 종료되게끔 코드를 작성해야만 할까요?
+            }
+
+        }
     }
 }
