@@ -98,7 +98,24 @@ public class ScoreCalc {
             if(score1 == -1) {  // 굳이 '종료'라든지 'x'라든지 이런게 아니라
                 break;          // -1을 입력했을 때 종료되게끔 코드를 작성해야만 할까요?
             }
+            // 합을 계산하기 위한 코드
+            totalScore = addScores(totalScore, score1); // 첫 반복문 시작일 때는 addScores(0, score1);
 
+            // 평균을 계산하는 코드
+            avgScore = calculateAvg(totalScore, totalSubs);
+            System.out.println("----- 점수 입력 시 마다 나오는 합계와 평균 ----- ");
+            System.out.println("입력한 점수의 합계 : " + totalScore);
+            System.out.println("입력한 점수의 평균 : " + avgScore);
+
+            // 평균 계산이 끝난 후 그 다음 반복에서는 과목 수가 같이 늘어나야지만 올바른
+            // 평균 계산이 가능할겁니다.
+            totalSubs++;
         }
+
+        System.out.println("----- 최종 합계와 평균 -----");
+        System.out.println("최종 점수의 합계 : " + totalScore);
+        System.out.println("최종 점수의 평균 : " + avgScore);
+
+        // chapter08_classes 패키지 생성 ClassA.java 클래스 생성
     }
 }
