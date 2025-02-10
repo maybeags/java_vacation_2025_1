@@ -38,4 +38,26 @@ package chapter08_classes.products;
     6. ProductMain.java 만들어서 이상의 상황을 모두 만족시키도록 객체 생성 및 속성 대입 그리고 메서드를 실행하시오.
  */
 public class Product {
+    int productNum;
+    String productName;
+
+    Product() {};  // 이게 완전 default 형태인데 매개변수 생성자 만들거기 때문에 있어야함.
+    Product(int productNum) {
+        this.productNum = productNum;
+    }
+
+    Product(String productName) {
+        this.productName = productName;
+    }
+
+    Product(int productNum, String productName) {
+        this.productNum = productNum;
+        this.productName = productName;
+    }
+
+    void showInfo() {
+        System.out.println("제품 번호 : " + this.productNum);
+        System.out.println("제품 이름 : " + this.productName);
+        System.out.println();
+    }
 }
