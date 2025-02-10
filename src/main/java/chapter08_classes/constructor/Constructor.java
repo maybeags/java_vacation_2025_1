@@ -38,4 +38,31 @@ public class Constructor {
     }
     // 예를 들어 Constructor con1 = new Constructor(10);으로 했다면
     // this 부분이 con1으로 대체됨.
+
+    // 매개변수 생성자 -> 매개변수가 String name인 생성자를 만드시오.
+    Constructor(String title) {
+        System.out.println("RequiredArgsConstructor(String 매개변수를 필수로 요구하는 생성자)");
+        this.name = title;
+    }
+    // 매개변수와 속성명이 일치할 필요는 없다.
+    // 원래 예전에는 매개변수와 속성이 다르다는 점을 강조하기 위해 개발자들이 서로 헷갈리지 않도록
+    // 매개변수명 =/= 속성명 으로 작성했으나
+    // 자동완성을 지원하게 되면서 좀 신경을 덜 쓰는 경향이 있고,
+    // 우리나라에서는 그냥 같이 쓰는게 일반적인 듯 함.
+
+    Constructor(int num, String name) {
+        System.out.println("AllArgsConstructor(int, String 매개변수를 필수로 요구하는 생성자)");
+        this.num = num;
+        this.name = name;
+    }
+
+    // String name과, int num을 매개변수로 하는 AllArgsConstructor를 생성하시고,
+    // ConstructorMain.java로 가서 contructor3 를 '여러분 이름', '여러분 나이'로 생성한 다음,
+    // sout을 통해 여러분 이름과 나이가 출력되도록 작성하시오.
+
+    // constructor0에는 name에 "김일", 나이에 "10" 입력하고 sout을 통해 출력하시오.
+
+    // int num과 String name을 매개변수로 하는 객체를 ConstructorMain.java에 생성하고,
+    // 객체명을 constructor4로 생성하는데, num 30, name 김이로 대입하시오.
+    // 그리고 sout을 통해 '김이 : 30'이 출력되도록 작성하시오.
 }
