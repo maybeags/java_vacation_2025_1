@@ -56,6 +56,12 @@ public class Constructor {
         this.name = name;
     }
 
+    Constructor(String name, int num) {     // 매개변수 순서가 다른 것은 다른 생성자로 간주함
+        System.out.println("AllArgsConstructor(String, int 매개변수를 필수로 요구하는 생성자)");
+        this.num = num;
+        this.name = name;
+    }
+
     // String name과, int num을 매개변수로 하는 AllArgsConstructor를 생성하시고,
     // ConstructorMain.java로 가서 contructor3 를 '여러분 이름', '여러분 나이'로 생성한 다음,
     // sout을 통해 여러분 이름과 나이가 출력되도록 작성하시오.
@@ -65,4 +71,22 @@ public class Constructor {
     // int num과 String name을 매개변수로 하는 객체를 ConstructorMain.java에 생성하고,
     // 객체명을 constructor4로 생성하는데, num 30, name 김이로 대입하시오.
     // 그리고 sout을 통해 '김이 : 30'이 출력되도록 작성하시오.
+
+    // 지금의 경우는 속성이 두 개 밖에 없기 때문에 객체 하나 당 조회를 두 번만 하면 되지만,
+    // 속성 개수가 매우 많을 때를 대비하여 속성 전체를 확인할 수 있는 메서드를 정의할 예정.
+
+    // 그리고 잘 생각해보면 지금 위에 있는 부분들은 전부 생성자와 속성과 관련된 부분이지
+    // 행위를 나타내는 메서드를 정의하지 않았었습니다.
+
+
+    // call1() 타입으로 작성
+    void showInfo() {
+        System.out.println("해당 객체의 num값 : " + num);
+        System.out.println("해당 객체의 name값 : " + name);
+    }
+
+    // call3() 타입으로 작성해보세요. -> 매개변수는 x return이 있다. -> String이라고 작성했으니까 return 타입이 String
+    String showInfo2() {
+        return "해당 객체의 num값 : " + num + "\n해당 객체의 name 값 : " + name;
+    }
 }
