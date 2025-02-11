@@ -50,4 +50,67 @@ package chapter10_access_modifier;
         저는 여러분들이 작성 다 끝나고 나면 객체 이런 방식으로 만들어서 특정 메서드 실행해보세요. -> 그때 통과 되는지 확인할 예정
  */
 public class BankAccessModifier {
+    private int accountNumber;
+    private String accountHolder;
+    private long balance;
+    private int pinNumber;
+
+    // 생성자 부분
+    public BankAccessModifier() {}
+
+    // Getter / Setter 부분
+    // Setter
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public void setAccountHolder(String accountHolder) {
+        this.accountHolder = accountHolder;
+    }
+
+    public void setBalance(long balance) {
+        // 음수값을 입력할 수 없음
+        this.balance = balance;
+    }
+
+    public void setPinNumber(int pinNumber) {
+        // 0 ~ 9999까지만 가능
+        this.pinNumber = pinNumber;
+    }
+
+    // Getter
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+
+    public String getAccountHolder() {
+        return accountHolder;
+    }
+
+    public long getBalance() {
+        return balance;
+    }
+
+    public int getPinNumber() {
+        return pinNumber;
+    }
+
+    public void showAccountInfo() {
+        System.out.println(this.accountHolder + "님의 계좌 번호는 " + this.accountNumber + "이며, 현재 잔액은 " + this.balance + "원입니다.");
+    }
+
+    // 입출금 관련 메서드
+    // 입금 메서드
+    public void deposit(int account, int inputPin) {
+        // 비밀번호가 맞는지 확인할 것
+        // 입금 금액이 양수일 것
+    }
+
+    // 출금 메서드
+    public void withdraw(int account, int inputPin) {
+        // 비밀번호가 맞는지 확인할 것
+        // 출금 금액이 양수일 것
+        // 출금 후 잔액이 0원 이상일 것
+    }
+
 }
