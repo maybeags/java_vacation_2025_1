@@ -10,7 +10,7 @@ package chapter09_setter_getter.univ_student;
         4) 이름과 학년을 받는 생성자
         5) 이름, 학년, 점수를 받는 생성자
 
-    3. Setter / Getter 메서드 정의
+    3. Setter / Getter 메서드 정의 -> 얘도 alt + ins가 있습니다.
         각각의 필드에 대한 Setter / Getter 만듭니다. Setter 3개 / Getter 3개
         1) setGrade의 범위 1 ~ 4 학년
         2) setScore의 범위 0.0 ~ 4.5
@@ -31,4 +31,76 @@ package chapter09_setter_getter.univ_student;
     student01.showInfo(); 로 호출할 수 있도록 하시오.
  */
 public class UnivStudent {
+    // 1. 필드 선언
+    private String name;
+    private int grade;
+    private double score;
+
+    // 2. 생성자 -> alt + ins
+    public UnivStudent() {
+    }
+
+    public UnivStudent(String name) {
+        this.name = name;
+    }
+
+    public UnivStudent(int grade) {
+        this.grade = grade;
+    }
+
+    public UnivStudent(String name, int grade) {
+        this.name = name;
+        this.grade = grade;
+    }
+
+    public UnivStudent(String name, int grade, double score) {
+        this.name = name;
+        this.grade = grade;
+        this.score = score;
+    }
+
+    // 3. Setter / Getter -> alt + ins : setGrade() / setScore()에 로직 작성
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        if (grade < 1 || grade > 5) {
+            return;
+        }
+        this.grade = grade;
+    }
+
+    public double getScore() {
+        return score;
+    }
+
+    public void setScore(double score) {
+        if (score < 0 || score > 4.5) {
+            return;
+        }
+        this.score = score;
+    }
+
+    // 4. showInfo()를 call1() 유형으로 작성
+    public void showInfo() {
+        System.out.println("이름 : " + this.name);
+        System.out.println("학년 : " + this.grade);
+        System.out.println("학점 : " + this.score);
+        System.out.println();
+    }
+
+    /*
+        chapter10_access_modifier 패키지 생성
+        BankAccessModifier.java 생성
+     */
 }
