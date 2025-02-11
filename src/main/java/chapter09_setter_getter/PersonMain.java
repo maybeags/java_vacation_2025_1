@@ -26,5 +26,12 @@ public class PersonMain {
 //        System.out.println(person01.name);        // 오류 발생
 
         System.out.println("제 나이는 " + person01.getAge() + "살입니다. 내년에는 " + (person01.getAge()+1) + "살이 됩니다.");
+
+        System.out.println(person01.getInfo());
+
+        /*
+            univ_student 패키지 생성
+            UnivStudent 클래스 생성
+         */
     }
 }

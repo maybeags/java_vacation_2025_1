@@ -76,4 +76,8 @@ public class Person {
         return age;
     }
 
+    public String getInfo() {
+        return this.getName() + " " + this.getAge();
+    }
+
 }
