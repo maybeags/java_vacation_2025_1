@@ -56,7 +56,35 @@ public class BankAccessModifier {
     private int pinNumber;
 
     // 생성자 부분
-    public BankAccessModifier() {}
+    public BankAccessModifier() {
+        System.out.println("기본생성자를 통해서 객체를 생성했습니다.");
+    }
+
+    public BankAccessModifier(int accountNumber) {
+        this.accountNumber = accountNumber;
+        System.out.println("계좌번호를 통해서 객체를 생성했습니다.");
+    }
+
+    public BankAccessModifier(int accountNumber, String accountHolder) {
+        this.accountNumber = accountNumber;
+        this.accountHolder = accountHolder;
+        System.out.println("계좌번호와 이름을 통해서 객체를 생성했습니다.");
+    }
+
+    public BankAccessModifier(int accountNumber, String accountHolder, long balance) {
+        this.accountNumber = accountNumber;
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+        System.out.println("계좌번호와 이름, 계좌 잔액을 통해서 객체를 생성했습니다.");
+    }
+
+    public BankAccessModifier(int accountNumber, String accountHolder, long balance, int pinNumber) {
+        this.accountNumber = accountNumber;
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+        this.pinNumber = pinNumber;
+        System.out.println("계좌번호와 이름, 계좌 잔액, 비밀번호를 통해서 객체를 생성했습니다.");
+    }
 
     // Getter / Setter 부분
     // Setter
@@ -70,12 +98,20 @@ public class BankAccessModifier {
 
     public void setBalance(long balance) {
         // 음수값을 입력할 수 없음
-        this.balance = balance;
+        if (balance < 0) {
+            System.out.println("불가능한 입력 금액입니다.");
+        } else {
+            this.balance = balance;
+        }
     }
 
     public void setPinNumber(int pinNumber) {
         // 0 ~ 9999까지만 가능
-        this.pinNumber = pinNumber;
+        if (pinNumber < 0 || pinNumber > 9999) {
+            System.out.println("불가능한 비밀번호입니다.");
+        } else {
+            this.pinNumber = pinNumber;
+        }
     }
 
     // Getter
@@ -101,16 +137,30 @@ public class BankAccessModifier {
 
     // 입출금 관련 메서드
     // 입금 메서드
-    public void deposit(int account, int inputPin) {
+    public void deposit(long account, int inputPin) {
         // 비밀번호가 맞는지 확인할 것
         // 입금 금액이 양수일 것
+        if (inputPin == this.pinNumber) {
+            if (account > 0) {
+                this.balance += account;
+                System.out.println("입금 성공! 현재 잔액 : " + this.balance);
+            } else {
+                System.out.println("불가능한 입력 금액입니다.");
+            }
+        } else {
+            System.out.println("비밀번호가 틀렸습니다.");
+        }
+
     }
 
     // 출금 메서드
-    public void withdraw(int account, int inputPin) {
-        // 비밀번호가 맞는지 확인할 것
-        // 출금 금액이 양수일 것
-        // 출금 후 잔액이 0원 이상일 것
+    public void withdraw(long account, int inputPin) {
+        if (inputPin == this.pinNumber && account > 0 && (this.balance - account) >= 0) {
+            this.balance -= account;
+            System.out.println("출금 성공 현재 잔액 : " + this.balance);
+        } else {
+            System.out.println("출금 실패했습니다.");
+        }
     }
 
 }
